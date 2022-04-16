@@ -1,0 +1,24 @@
+{{#each Posts as |Post| }}
+    <div class="card">
+        <div class="card-header">
+            <h2>
+                <a class="home-header" href="/models/Post/{{Post.id}}">{{Post.name}}</a>
+            </h2>
+        </div>
+    
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p class="card-text">{{Post.description}}</p>
+            <div class="col text-center">
+                <button type="button" class="btn btn-secondary more-button"><a href="/models/Post/{{Post.id}}">More posts</a></button>
+            </div>
+            <footer class="blockquote-footer">Posted at {{format_date Post.date_created}}
+                <div>
+                <cite title="Source Title">Author: {{Post.User.name}}</cite>
+                </div>
+            </footer>
+        </blockquote>
+    </div>
+</div>
+{{/each}}
+
